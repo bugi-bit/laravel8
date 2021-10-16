@@ -73,5 +73,9 @@ class TaskController extends Controller
 
         return redirect('/tasks');
     }
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
     
 }

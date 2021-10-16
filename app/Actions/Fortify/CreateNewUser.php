@@ -39,12 +39,5 @@ class CreateNewUser implements CreatesNewUsers
         ]);
     }
     
-    public function update(Request $request)
-    {
-        // Validate the new password length...
-
-        $request->user()->fill([
-            'password' => Hash::make($request->newPassword)
-        ])->save();
-    }
+    
 }

@@ -27,4 +27,6 @@ class ResetUserPassword implements ResetsUserPasswords
             'password' => Hash::make($input['password']),
         ])->save();
     }
+    
 }
+
