@@ -17,6 +17,11 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var string[]
      */
+    public function setPasswordAttribute($password)
+    {
+    $this->attributes['password'] = bcrypt($password);
+    }
+    
     protected $fillable = [
         'name',
         'email',
