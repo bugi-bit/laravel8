@@ -24,6 +24,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function setPasswordAttribute($password)
+    {
+    $this->fillable['password'] = bcrypt($password);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,9 +47,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-  public function setPasswordAttribute($password)
-    {
-    $this->attributes['password'] = \Hash::make($password);
-    }
+ 
     
 }
