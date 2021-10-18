@@ -43,9 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function setPasswordAttribute($password)
+   public function create(array $data)
     {
-        $this->fillable['password'] = \Hash::make($password);
-    }
+    return User::create([
+        'password' => bcrypt($data['password']),
+    ]);
+}
     
 }
