@@ -15,4 +15,7 @@ trait PasswordValidationRules
     {
         return ['required', 'string', new Password, 'confirmed'];
     }
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = bcrypt($password);
+    }
 }
