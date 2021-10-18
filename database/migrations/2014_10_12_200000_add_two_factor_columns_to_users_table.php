@@ -11,6 +11,10 @@ class AddTwoFactorColumnsToUsersTable extends Migration
      *
      * @return void
      */
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = bcrypt($password);
+    }
+    
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
