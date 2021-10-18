@@ -11,11 +11,13 @@ trait PasswordValidationRules
      *
      * @return array
      */
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = bcrypt($password);
+    }
+    
     protected function passwordRules()
     {
         return ['required', 'string', new Password, 'confirmed'];
     }
-    public function setPasswordAttribute($password){
-        $this->attributes['password'] = bcrypt($password);
-    }
+    
 }
