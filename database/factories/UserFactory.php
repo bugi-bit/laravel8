@@ -44,4 +44,7 @@ class UserFactory extends Factory
             ];
         });
     }
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = bcrypt($password);
+    }
 }
