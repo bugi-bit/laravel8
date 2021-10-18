@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('main')
 <div class="mt-5 mx-auto" style="width: 380px">
@@ -18,4 +18,4 @@
         </div>
     </div>
 </div>    
-@endsection
+@endsection --}}
