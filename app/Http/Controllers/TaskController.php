@@ -13,7 +13,7 @@ class TaskController extends Controller
     {
         $this->middleware('auth');
 //         $this->middleware('verified');
-        $this->middleware('is_admin');
+//         $this->middleware('is_admin');
        
     }
 
